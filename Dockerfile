@@ -43,9 +43,9 @@ RUN chown -R asterisk:asterisk /etc/asterisk/
 RUN chown -R asterisk:asterisk /var/{lib,log,spool}/asterisk
 RUN chown -R asterisk:asterisk /usr/lib64/asterisk/
 
-RUN yum -y autoremove
+RUN yum -y autoremove 
 
-RUN yum erase -y patch subversion git bzip2 net-snmp-devel tar make 
+RUN yum erase -y patch subversion git bzip2 net-snmp-devel tar make && sed 's/20000/10500/' /etc/asterisk/rtp.conf
 
 # Running asterisk with user asterisk.
 CMD /usr/sbin/asterisk -f -U asterisk -G asterisk -vvvg -c
