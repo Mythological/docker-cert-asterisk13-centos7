@@ -2,8 +2,8 @@
 
 docker build -t local/aster13 .
 
-docker run -dit \<container\>
+docker run -dit  \<container\>
 
-docker exec -it \<container\> bash
+docker exec -it  \<container\> bash
 
 ctr+ P + Q
